@@ -1,19 +1,12 @@
-exports.getAllProducts = (req, res, next) => {
-    res.json({ message: 'Get All Products' });
+exports.getProductsLanding = (req, res, next) => {
+    res.json({ message: 'Get Products Landing Now!' });
 };
 
-exports.getProduct = (req, res, next) => {
-    res.json({ message: 'Get Product Details' });
+exports.getProducts = (req, res, next) => {
+    res.json({ message: 'Get Filtered Products' });
 };
 
-exports.createProduct = (req, res, next) => {
-    res.json({ message: 'Create Product' });
+exports.getProductById = (req, res, next) => {
+    res.json({ message: 'Get Product By Id' });
 };
 
-exports.updateProduct = (req, res, next) => {
-    res.json({ message: 'Updated Product' });
-};
-
-exports.deleteProduct = (req, res, next) => {
-    res.json({ message: 'Deleted Product' });
-};
