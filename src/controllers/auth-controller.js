@@ -7,24 +7,31 @@ exports.register = (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    res.json({ username, password });
+    res.json({ email, password });
 };
 
 exports.forgetPassword = (req, res, next) => {
     const { email } = req.body;  
-
+    // gen token --> create link --> send email
     res.json({ email });
 };
 
+// https://api.codecamp.com/auth/kjfpsdkpsdps345
 exports.verifyForgetPassword = (req, res, next) => {
-    const {} = req.body;
-    
-    res.json({ message: 'Verify Forget Password' });
+    const { token } = req.params;
+    // Logic check token
+    // redirect reset password --> with token
+    res.json({ message: 'Verify Forget Password', token });
 };
 
 exports.resetPassword = (req, res, next) => {
-    
-    res.json({ message: 'Reset Password' });
+    const { token } = req.params;
+    const { password } = req.body;
+
+    // change new password
+    // get in database
+
+    res.json({ message: 'Reset Password', password, token });
 };
